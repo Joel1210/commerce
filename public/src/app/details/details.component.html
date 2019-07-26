@@ -1,0 +1,9 @@
+<p>details works!</p>
+
+
+<h1>Name <span><h3>{{oneProduct.name}}</h3></span></h1>
+<h1>Quantity <span><h3>{{oneProduct.quantity}}</h3></span></h1>
+<h1>Price <span><h3>${{oneProduct.price}}</h3></span></h1>
+
+<button (click)="goHome()">Back</button>
+<button *ngIf="show ===true" (click)="deleteProduct(); goHome()">Delete</button>

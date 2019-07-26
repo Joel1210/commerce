@@ -1,0 +1,28 @@
+<h1>Commerce Manager</h1>
+
+<div>
+    <h1>Product List</h1>
+    <button [routerLink]="['/products/new']">Add New Product</button>
+
+        <table>
+            <thead>
+                <th>id</th>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of allProducts">
+                    <td>{{product._id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>${{product.price}}</td>
+                    <td><button [routerLink]="['/products/edit/', product._id]">Edit</button>
+                        <button [routerLink]="['/products/', product._id]">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+</div>

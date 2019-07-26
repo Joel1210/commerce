@@ -1,0 +1,23 @@
+<p>edit works!</p>
+
+<form>
+    <div *ngIf="!name.valid"> The name of the product must be at least 3 characters long!</div>
+    <label for="name"> Name: </label><br>
+    <input type="text" name="name" required minlength="3" value={{updatedProduct.name}} [(ngModel)]="updatedProduct.name" #name="ngModel" />
+    <br>
+
+    <div *ngIf="!quantity.valid || quantity.value < 0">The quantity must be above 0!</div>
+    <label for="quantity">Quantity: </label><br>
+    <input type="number" name="quantity" required min="3" value={{updatedProduct.quantity}}
+        [(ngModel)]="updatedProduct.quantity" #quantity="ngModel" /><br>
+
+    <div *ngIf="!price.valid || price.value < 0">The price must be above 0!</div>
+    <label for="price">Quantity: </label><br>
+    <input type="number" name="price" required min="3" value={{updatedProduct.price}}
+        [(ngModel)]="updatedProduct.price" #price="ngModel" /><br>
+    <button *ngIf="name.valid && quantity.valid && price.valid && quantity.value >= 0 && price.value >= 0" (click)=" updateProduct(updatedProduct)">Edit</button>
+    
+    <button (click)="showOneProduct()">Reset</button>
+
+
+</form>
